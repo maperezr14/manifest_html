@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manifest | Encuentra el destino perfecto</title>
+    <meta name="description" content="Tu guía de viajes perfecta. Ofrecemos una amplia gama de destinos, desde playas paradisíacas hasta montañas majestuosas, para que encuentres el lugar perfecto para tu próxima escapada.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="shortcut icon" href="./assets/images/icons/favicon.svg" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <!-- Logo -->
+            <div class="header__logo">
+                <img src="./assets/images/logo_manifest.svg" alt="Manifest | Encuentra el destino perfecto"
+                    class="header__logo-image" aria-label="Logo de Manifest" />
+            </div>
+            <!-- Botón para abrir el menú móvil -->
+            <button class="header__mobile-toggle" aria-label="Abrir menú de navegación">
+                <span class="header__mobile-toggle-bar"></span>
+            </button>
+            <!-- Menú de navegación (desktop y móvil) -->
+            <nav class="header__nav js-menu" aria-label="Menú de navegación principal">
+                <ul class="header__menu">
+                    <li class="header__menu-item">
+                        <a href="#hero" class="header__menu-link" aria-label="Ir a Inicio">Inicio</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#best" class="header__menu-link" aria-label="Ir a Nosotros">Nosotros</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#offers" class="header__menu-link" aria-label="Ir a Viajes">Viajes</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#contact" class="header__menu-link" aria-label="Ir a Contacto">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="hero" class="section hero-section">
+            <div class="content hero-section__content">
+                <!-- Imagen principal del banner -->
+                <div class="hero-section__banner">
+                    <img src="./assets/images/banner_hero_section.jpg" alt="Manifest" class="hero-section__image" loading="lazy" />
+                </div>
+                <!-- Texto del banner -->
+                <div class="hero-section__caption">
+                    <h1 class="hero-section__title">Explora el mundo: Tu guía de viajes perfecta</h1>
+                    <span class="hero-section__separator"></span>
+                    <p class="hero-section__text hero-section__text--featured">
+                        Explora destinos increíbles y vive aventuras inolvidables.
+                    </p>
+                    <p class="hero-section__text">
+                        Ofrecemos una amplia gama de destinos, desde playas paradisíacas hasta montañas majestuosas,
+                        para que encuentres el lugar perfecto para tu próxima escapada.
+                    </p>
+                    <a class="button button--lg bg--amethyst button--ir" href="#best">Descubre</a>
+                </div>
+            </div>
+        </section>
+        <section id="best" class="section best-places">
+            <div class="content best-places__content">
+              <h2 class="best-places__title">Los mejores destinos</h2>
+              <p class="best-places__description">
+                Explora los mejores destinos del mundo, desde las playas paradisíacas de Maldivas hasta las montañas majestuosas de los Alpes. Cada lugar ofrece una experiencia única.
+              </p>
+              <div class="best-places__grid">
+                <div class="best-places__item">
+                  <img class="best-places__image" src="./assets/images/best-places/best-places_1.jpg" alt="Playa al atardecer"/>
+                </div>
+                <div class="best-places__item">
+                  <img class="best-places__image" src="./assets/images/best-places/best-places_2.jpg" alt="Escaleras hacia la playa"/>
+                </div>
+                <div class="best-places__item">
+                  <img class="best-places__image" src="./assets/images/best-places/best-places_3.jpg" alt="Estrella de mar bajo el agua"/>
+                </div>
+                <div class="best-places__item">
+                  <img class="best-places__image" src="./assets/images/best-places/best-places_4.jpg" alt="Acantilado en la costa"/>
+                </div>
+                <div class="best-places__item">
+                  <img class="best-places__image" src="./assets/images/best-places/best-places_5.jpg" alt="Barco en aguas cristalinas"/>
+                </div>
+                <div class="best-places__item">
+                  <img class="best-places__image" src="./assets/images/best-places/best-places_6.jpg" alt="Piña en la arena junto al mar"/>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section id="featured" class="section featured-places">
+            <div class="content featured-places__content">
+                <div class="feature-places__item">
+                    <div class="feature-places__image">
+                        <img src="./assets/images/featured/featured-place_cancun.jpg" alt="Cancún - México">
+                    </div>
+                    <div class="featured-places__text">
+                        <h3 class="featured-places__title">Cancún</h3>
+                        <p class="featured-places__description">
+                            Cancún es una ciudad vibrante famosa por sus playas y vida nocturna. Con aguas cristalinas y arenas blancas, es un paraíso para los amantes del sol.
+                        </p>
+                        <a href="#" class="button button--lg bg--amethyst button--il button--ir">Viajar</a>
+                    </div>
+                </div>
+                <div class="feature-places__item">
+                    <div class="feature-places__image">
+                        <img src="./assets/images/featured/featured-place_romana.jpg" alt="Cancún - México">
+                    </div>
+                    <div class="featured-places__text">
+                        <h3 class="featured-places__title">La romana</h3>
+                        <p class="featured-places__description">
+                            Imagina un impresionante destino de playa donde las arenas doradas se encuentran con aguas cristalinas. Las suaves olas te invitan a relajarte bajo el cálido sol, mientras las palmeras se mecen con la suave brisa. 
+                        </p>
+                        <a href="#" class="button button--lg bg--amethyst button--il button--ir">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </section>          
+        <section id="offers" class="section offers-places">
+            <div class="content"></div>
+        </section>
+        <section id="plans" class="section plans-prices">
+            <div class="content"></div>
+        </section>
+        <section id="contact" class="section contact-section">
+            <div class="content"></div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="./assets/js/functions.js"></script>
+</body>
+
+</html>

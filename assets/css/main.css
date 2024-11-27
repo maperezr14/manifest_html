@@ -1,0 +1,506 @@
+/* Fonts */
+
+/* General estilos */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Botón */
+.button {
+    display: inline-block;
+    padding: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.button.button--il {
+    padding-left: 50px;
+}
+.button.button--ir {
+    padding-right: 50px;
+}
+
+.button.button--ir::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 16px;
+    background: url(../images/icons/icon_right-arrow.svg) no-repeat center;
+}
+
+.button--lg {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.bg--amethyst {
+    background-color: #9c27b0;
+    color: #fff;
+}
+
+.bg--amethyst:hover {
+    background-color: #7b1fa2;
+}
+
+/* Estilos para el cuerpo */
+body {
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth"100;
+    line-height: normal;
+    background-color: #FFFFFF;
+}
+
+/* .section {} */
+
+.section .content {
+    max-width: 1344px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    color: #343434;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: red;
+}
+
+.header .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1344px;
+    margin: 0 auto;
+}
+
+.header .header__container .header__logo-image {
+    height: 40px;
+}
+
+.header .header__container .header__nav {
+    transition: transform 0.3s ease;
+}
+
+/* Menú de escritorio */
+.header .header__container .header__menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.header .header__container .header__mobile-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.header .header__container .header__mobile-toggle .header__mobile-toggle-bar {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+}
+
+.header .header__container .header__mobile-toggle .header__mobile-toggle-bar::before,
+.header .header__container .header__mobile-toggle .header__mobile-toggle-bar::after {
+    content: '';
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    border-radius: 6px;
+    transition: all .3s ease-in-out;
+}
+
+.header .header__container .header__mobile-toggle .header__mobile-toggle-bar::before {
+    top: -8px;
+}
+
+.header .header__container .header__mobile-toggle .header__mobile-toggle-bar::after {
+    bottom: -8px;
+}
+
+/* Mostrar menú móvil cuando está activo */
+.header .header__container .header__nav--open {
+    transform: translateX(0);
+}
+
+/* Menú de escritorio */
+/* Menú móvil (por defecto oculto fuera de la pantalla) */
+.header .header__container .header__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    padding: 20px;
+    z-index: 1000;
+}
+
+.header .header__container .header__nav .header__menu {
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* .header .header__container .header__menu .header__menu-item {} */
+
+.header .header__container .header__menu .header__menu-item .header__menu-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+/* Estilos para escritorio */
+@media (min-width: 768px) {
+    .header .header__container .header__nav {
+        position: static;
+        transform: none;
+        background: none;
+        width: auto;
+        flex-direction: row;
+    }
+
+    .header .header__container .header__nav .header__menu {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .header .header__container .header__mobile-toggle {
+        display: none;
+    }
+}
+
+/* Hero Section */
+/* Bloque principal */
+.hero-section {
+    text-align: center;
+}
+
+.hero-section .hero-section__content {
+    height: 80vh;
+    background: #000;
+    max-width: 100%;
+}
+
+/* Imagen del banner */
+.hero-section .hero-section__content .hero-section__banner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-section .hero-section__content .hero-section__banner .hero-section__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.5;
+}
+
+/* Texto del banner */
+.hero-section .hero-section__content .hero-section__caption {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 1344px;
+    display: grid;
+    gap: 30px;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.hero-section .hero-section__content .hero-section__caption .hero-section__title {
+    font-size: 61px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 120%;
+    margin: 0;
+}
+
+.hero-section .hero-section__content .hero-section__caption .hero-section__separator {
+    display: inline-block;
+    width: 60px;
+    height: 4px;
+    background-color: #9c27b0;
+    margin: 10px auto;
+}
+
+.hero-section .hero-section__content .hero-section__caption .hero-section__text {
+    font-size: 16px;
+    line-height: 120%;
+    color: #fff;
+}
+
+.hero-section .hero-section__content .hero-section__caption .hero-section__text.hero-section__text--featured {
+    font-weight: bold;
+    color: #fff;
+    font-size: 31px;
+    line-height: 120%;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section .hero-section__content {
+        height: 100vh;
+    }
+    .hero-section .hero-section__content .hero-section__caption {
+        top: 50%;
+    }
+    .hero-section .hero-section__content .hero-section__caption .hero-section__title {
+        font-size: 32px;
+    }
+    .hero-section .hero-section__content .hero-section__caption .hero-section__text.hero-section__text--featured {
+        font-size: 24px;
+    }
+}
+
+/* Best Places */
+/* Bloque principal */
+.best-places {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+/* .best-places .best-places__content {
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
+.best-places .best-places__content .best-places__title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #9c27b0;
+    margin-bottom: 10px;
+}
+
+.best-places .best-places__content .best-places__description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Grid */
+.best-places .best-places__content .best-places__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 7;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item:nth-child(6) {
+    grid-area: 3 / 5 / 4 / 7;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item:nth-child(3) {
+    grid-area: 2 / 4 / 3 / 7;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item:nth-child(4) {
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item:nth-child(5) {
+    grid-area: 3 / 3 / 4 / 5;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item {
+    overflow: hidden;
+    border-radius: 16px;
+    height: 288px;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item .best-places__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    object-position: center;
+}
+
+.best-places .best-places__content .best-places__grid .best-places__item .best-places__image:hover {
+    transform: scale(1.05);
+}
+
+/* Adaptación móvil */
+@media (max-width: 768px) {
+    .best-places .best-places__content .best-places__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 20px;
+    }
+
+    .best-places .best-places__content .best-places__grid .best-places__item:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 7;
+    }
+
+    .best-places .best-places__content .best-places__grid .best-places__item:nth-child(2) {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .best-places .best-places__content .best-places__grid .best-places__item:nth-child(3) {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .best-places .best-places__content .best-places__grid .best-places__item:nth-child(4) {
+        grid-area: 3 / 1 / 4 / 2;
+    }
+
+    .best-places .best-places__content .best-places__grid .best-places__item:nth-child(5) {
+        grid-area: 4 / 1 / 5 / 2;
+    }
+
+    .best-places .best-places__content .best-places__grid .best-places__item:nth-child(6) {
+        grid-area: 5 / 1 / 6 / 2;
+    }
+}
+
+/* Featured */
+.featured-places .featured-places__content {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+/* Estilo de cada item */
+.featured-places .featured-places__content .feature-places__item {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    max-width: 100%;
+}
+
+.featured-places .featured-places__content .feature-places__item .feature-places__image, 
+.featured-places .featured-places__content .feature-places__item .featured-places__text {
+    width: 50%;
+}
+
+.featured-places .featured-places__content .feature-places__item .featured-places__text {
+    text-align: left;
+    padding: 80px 120px;
+}
+
+.featured-places .featured-places__content .feature-places__item:nth-child(odd) .feature-places__image {
+    order: 0;
+}
+
+.featured-places .featured-places__content .feature-places__item:nth-child(odd) .featured-places__text {
+    order: 1;
+}
+
+.featured-places .featured-places__content .feature-places__item:nth-child(even) .feature-places__image {
+    order: 1;
+}
+
+.featured-places .featured-places__content .feature-places__item:nth-child(even) .featured-places__text {
+    order: 0;
+}
+
+.featured-places .featured-places__content .feature-places__item .feature-places__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 2px solid #ddd;
+}
+
+.featured-places .featured-places__content .feature-places__item .featured-places__text .featured-places__title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #9c27b0;
+    margin-bottom: 15px;
+}
+
+.featured-places .featured-places__content .feature-places__item .featured-places__text .featured-places__description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+.featured-places .featured-places__content .feature-places__item:nth-child(odd) .featured-places__text .button.button--il::before,
+.featured-places .featured-places__content .feature-places__item:nth-child(even) .featured-places__text .button.button--il::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 16px;
+}
+
+.featured-places .featured-places__content .feature-places__item:nth-child(even) .featured-places__text .button.button--il::before {
+    background: url(../images/icons/icon_beach.svg) no-repeat center;
+}
+
+.featured-places .featured-places__content .feature-places__item:nth-child(odd) .featured-places__text .button.button--il::before {
+    background: url(../images/icons/icon_airplane.svg) no-repeat center;
+}
+
+@media screen and (max-width: 768px) {
+    .featured-places .featured-places__content {
+        max-width: 90%;
+    }
+    .featured-places .featured-places__content .feature-places__item {
+        flex-direction: column;
+    }
+    .featured-places .featured-places__content .feature-places__item .feature-places__image, 
+    .featured-places .featured-places__content .feature-places__item .featured-places__text {
+        width: 100%;
+    }
+    .featured-places .featured-places__content .feature-places__item:nth-child(odd) .feature-places__image {
+        order: 1;
+    }
+    
+    .featured-places .featured-places__content .feature-places__item:nth-child(odd) .featured-places__text {
+        order: 0;
+    }
+    .featured-places .featured-places__content .feature-places__item .featured-places__text {
+        text-align: left;
+        padding: 30px 0;
+    }
+    .featured-places .featured-places__content .feature-places__item .feature-places__image {
+        border-radius: 16px;
+        overflow: hidden;
+        height: 238.5px;
+    }
+}
