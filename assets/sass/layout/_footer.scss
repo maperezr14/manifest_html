@@ -1,0 +1,141 @@
+@use "../abstracts/variables" as vars;
+
+.footer {
+    background-color: vars.$bg-amethyst;
+    color: vars.$color-white;
+    padding: 60px 0 30px;
+
+    .footer__container {
+        max-width: vars.$max-width;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 32px;
+
+        .footer__section {
+            flex: 1;
+            min-width: 300px;
+
+            &--main {
+                padding-right: 20px;
+
+                .footer__logo-image {
+                    margin-bottom: 16px;
+                }
+
+                .footer__description {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
+            }
+
+            &--links {
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                padding-top: 30px;
+
+                .footer__list {
+                    margin-top: 1rem;
+
+                    .footer__list-item {
+                        margin-bottom: 10px;
+                        list-style: none;
+
+                        .footer__link {
+                            color: vars.$color-white;
+                            font-size: 1rem;
+                            display: inline-flex;
+                            align-items: center;
+                            text-decoration: none;
+                            position: relative;
+                            padding-left: 30px;
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 24px;
+                                height: 24px;
+                                left: 0;
+                                background: url(../images/icons/icon_right-arrow.svg) no-repeat center;
+                            }
+
+                            &:hover {
+                                font-style: italic;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+    .footer__separator.section__separator {
+        max-width: vars.$max-width;
+        margin: 30px auto;
+    }
+    .footer__bottom {
+        max-width: vars.$max-width;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .footer__copyright {
+            font-size: 14px;
+        }
+
+        .footer__icons {
+            display: flex;
+            gap: 1rem;
+
+            .footer__icon-link img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .footer__container {
+            max-width: 90%;
+
+            .footer__section {
+                &--links {
+                    padding-top: 0;
+                    flex-direction: column;
+                }
+            }
+
+            .footer__separator.section__separator {
+                max-width: 90%;
+
+                &::before, &::after {
+                    width: 40%;
+                }
+            }
+
+            .footer__bottom {
+                max-width: 90%;
+                margin: 0 auto;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 16px;
+                flex-direction: column;
+                align-content: flex-start;
+            }
+
+            .footer__section--main {
+                .footer__logo-image {
+                    margin: 0 auto;
+                    display: block;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+}

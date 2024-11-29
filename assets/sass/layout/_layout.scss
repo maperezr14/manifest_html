@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as vars;
+
+body {
+    font-family: vars.$font-family;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth"100;
+    line-height: normal;
+    background-color: vars.$bg-white;
+}

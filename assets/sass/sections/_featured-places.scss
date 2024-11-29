@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as vars;
+
+.featured-places {
+	.featured-places__content {
+		display: flex;
+		flex-direction: column;
+		max-width: 100%;
+		.feature-places__item {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			overflow: hidden;
+			transition: transform 0.3s ease;
+			max-width: 100%;
+			.feature-places__image {
+				width: 50%;
+				img {
+					width: 100%;
+					height: auto;
+					display: block;
+				}
+			}
+			.featured-places__text {
+				width: 50%;
+				text-align: left;
+				padding: 80px;
+				.featured-places__title {
+					font-size: 1.75rem;
+					font-weight: bold;
+					color: vars.$color-amethyst;
+					margin-bottom: 15px;
+				}
+				.featured-places__description {
+					font-size: 1rem;
+					margin-bottom: 20px;
+				}
+			}
+			&:nth-child(odd) {
+				.feature-places__image {
+					order: 0;
+				}
+				.featured-places__text {
+					order: 1;
+					.button.button--il {
+						&::before {
+							content: '';
+							width: 24px;
+							height: 24px;
+							position: absolute;
+							left: 16px;
+							background: url(../images/icons/icon_airplane.svg) no-repeat center;
+						}
+					}
+				}
+			}
+			&:nth-child(even) {
+				.feature-places__image {
+					order: 1;
+				}
+				.featured-places__text {
+					order: 0;
+					.button.button--il {
+						&::before {
+							content: '';
+							width: 24px;
+							height: 24px;
+							position: absolute;
+							left: 16px;
+							background: url(../images/icons/icon_beach.svg) no-repeat center;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 768px) {
+	.featured-places {
+		.featured-places__content {
+			.feature-places__item {
+				.feature-places__image {
+					img {
+						height: 100%;
+						object-fit: cover;
+						object-position: center;
+					}
+					width: 100%;
+					border-radius: 16px;
+					overflow: hidden;
+					height: 238.5px;
+				}
+				flex-direction: column;
+				.featured-places__text {
+					width: 100%;
+					text-align: left;
+					padding: 30px 0;
+				}
+				&:nth-child(odd) {
+					.feature-places__image {
+						order: 1;
+					}
+					.featured-places__text {
+						order: 0;
+					}
+				}
+			}
+			max-width: 100%;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as vars;
+// Corregir para usar & dentro de .button
+.button {
+    display: inline-block;
+    padding: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: relative;
+
+    &--il {
+        padding-left: 50px;
+    }
+
+    &--ir {
+        padding-right: 50px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: 16px;
+            background: url(../images/icons/icon_right-arrow.svg) no-repeat center;
+        }
+    }
+
+    &--lg {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &--md {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 9px 16px;
+    }
+
+    &--sm {
+        font-size: 12px;
+        line-height: 20px;
+        padding: 7px 16px;
+    }
+
+    &.bg--neutral { // Corregido aquí
+        color: vars.$color-gray;
+        background-color: vars.$bg-neutral;
+
+        &:hover {
+            background-color: vars.$bg-neutral;
+        }
+    }
+
+    &.bg--amethyst {
+        background-color: vars.$bg-amethyst;
+        color: vars.$color-white;
+
+        &:hover {
+            background-color: vars.$bg-amethyst-hover;
+        }
+    }
+}

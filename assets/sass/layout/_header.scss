@@ -1,0 +1,210 @@
+@use "../abstracts/variables" as vars;
+
+.header {
+    color: vars.$color-gray;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    transition: background vars.$transition;
+    .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1344px;
+        margin: 0 auto;
+
+        .header__logo-image {
+            display: block;
+            width: vars.$logo-width-default;
+            height: 48px;
+            background: url(../images/logo_manifest.svg) no-repeat;
+            background-size: contain;
+            transition: all vars.$transition;
+            @media screen and (max-width: 768px) {
+                width: calc(#{vars.$logo-width-scrolled} * 0.7);
+                height: 27px;
+            }
+        }
+
+        .header__nav {
+            transition: transform vars.$transition;
+
+            &.js-menu.header__nav--open {
+                transform: translateX(0);
+            }
+
+            @media (max-width: 768px) {
+                position: fixed;
+                top: 60px;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: calc(100vh - 60px);
+                background: vars.$color-white;
+                flex-direction: column;
+                padding: 25px;
+                transform: translateX(100%);
+                z-index: 999;
+            }
+
+            @media (min-width: 768px) {
+                position: static;
+                transform: none;
+                background: none;
+                width: auto;
+                flex-direction: row;
+            }
+
+            .header__menu {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                }
+
+                .header__menu-item {
+                    .header__menu-link {
+                        color: vars.$color-white;
+                        text-decoration: none;
+                        position: relative;
+                        margin: 0 10px;
+                        font-weight: 400;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            width: 0;
+                            height: 4px;
+                            background: vars.$color-amethyst;
+                            bottom: -5px;
+                            transition: width vars.$transition;
+                        }
+
+                        &:hover::before,
+                        &.active::before {
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header__mobile-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: block;
+            width: 24px;
+            height: 24px;
+            display: none;
+            @media screen and (max-width: 768px) {
+                display: block;
+            }
+
+            .header__mobile-toggle-bar {
+                position: relative;
+                display: block;
+                width: 24px;
+                height: 3px;
+                border-radius: 6px;
+                background: vars.$color-white;
+                transition: all vars.$transition;
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 24px;
+                    height: 3px;
+                    background: vars.$color-white;
+                    border-radius: 6px;
+                    transition: all vars.$transition;
+                    left: 0;
+                }
+
+                &::before {
+                    top: -8px;
+                }
+
+                &::after {
+                    bottom: -8px;
+                }
+            }
+        }
+    }
+
+    &.scrolled {
+        background: vars.$color-white;
+        box-shadow: 0 1px 20px 0px rgba(0, 0, 0, 0.3);
+
+        .header__container {
+            .header__logo-image {
+                background: url(../images/logo_manifest_dark.svg) no-repeat;
+                width: vars.$logo-width-scrolled;
+                background-size: contain;
+                @media screen and (max-width: 768px) {
+                    width: calc(#{vars.$logo-width-scrolled} * 0.7);
+                    height: 27px;
+                }
+            }
+
+            .header__mobile-toggle {
+                .header__mobile-toggle-bar,
+                .header__mobile-toggle-bar::before,
+                .header__mobile-toggle-bar::after {
+                    background: vars.$color-gray;
+                }
+            }
+
+            .header__menu {
+                .header__menu-item {
+                    .header__menu-link {
+                        color: vars.$color-gray;
+
+                        &.active {
+                            color: vars.$color-amethyst;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+    &.headerOpen {
+        background: vars.$color-white;
+
+        .header__container {
+            .header__logo-image {
+                background: url(../images/logo_manifest_dark.svg) no-repeat;
+                background-size: contain;
+            }
+
+            .header__mobile-toggle {
+                .header__mobile-toggle-bar {
+                    height: 0;
+
+                    &::before {
+                        transform: rotate(-45deg);
+                        top: -1px;
+                        left: -2px;
+                        background: vars.$color-gray;
+                    }
+
+                    &::after {
+                        transform: rotate(45deg);
+                        top: -1px;
+                        left: -2px;
+                        background: vars.$color-gray;
+                    }
+                }
+            }
+        }
+    }
+}

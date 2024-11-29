@@ -1,0 +1,145 @@
+@use "../abstracts/variables" as vars;
+
+.offers-places {
+    .offers-places__content {
+        .offers-places__grid {
+            display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 1.5rem;
+            @keyframes heart {
+                0%, 17.5% {
+                    font-size: 0;
+                }
+            }
+            .offers-places__item {
+                background-color: vars.$bg-white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                transition: transform vars.$transition;
+                .offers-places__item--image {
+                    position: relative;
+                    height: 220px;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                    .offers-places__item--favorite {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        background: #fff;
+                        border: none;
+                        border-radius: 50%;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        cursor: pointer;
+                        font-size: 1rem;
+                        color: vars.$color-amethyst;
+                        transition: background-color vars.$transition;
+                        width: 35px;
+                        height: 35px;
+                        display: flex;
+                        align-content: center;
+                        justify-content: center;
+                        &:hover {
+                            background-color: vars.$bg-white;
+                        }
+                        .toggle-heart {
+                            position: absolute;
+                            opacity: 0;
+                            &:checked+label {
+                                svg {
+                                    fill: #8a42fb;
+                                }
+                                will-change: font-size;
+                                animation: heart 1s cubic-bezier(0.17, 0.89, 0.32, 1.49);
+                            }
+                        }
+                        label {
+                            
+                            font-size: 2em;
+                            cursor: pointer;
+                            align-self: center;
+                            position: relative;
+                            &:before {
+                                position: absolute;
+                                z-index: -1;
+                                top: 50%;
+                                left: 50%;
+                                border-radius: 50%;
+                                content: "";
+                            }
+                            &:after {
+                                position: absolute;
+                                z-index: -1;
+                                top: 50%;
+                                left: 50%;
+                                border-radius: 50%;
+                                content: "";
+                            }
+                        }
+                    }
+                }
+                .offers-places__item--content {
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    .offers-places__item--chips {
+                        display: flex;
+                        gap: 0.5rem;
+                        .offers-places__item--chip {
+                            background-color: vars.$bg-neutral;
+                            font-size: 12px;
+                            padding: 4px 8px;
+                            border-radius: 16px;
+                            line-height: 16px;
+                        }
+                    }
+                    .offers-places__item--date {
+                        font-size: 12px;
+                    }
+                    .offers-places__item--title {
+                        font-size: 20px;
+                        font-weight: bold;
+                        color: vars.$color-gray;
+                        line-height: 120%;
+                    }
+                    .offers-places__item--description {
+                        font-size: 0.875rem;
+                        flex-grow: 1;
+                    }
+                    .offers-places__item--price {
+                        font-size: 1rem;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        .offers-places__item--price-amount {
+                            color: vars.$color-gray;
+                            font-weight: 800;
+                        }
+                    }
+                    .offers-places__item--actions {
+                        display: flex;
+                        gap: 16px;
+                        .button {
+                            width: 48%;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width: 768px) {
+                .offers-places__item {
+                    max-width: 100%;
+                }
+            }            
+		}
+	}
+}
