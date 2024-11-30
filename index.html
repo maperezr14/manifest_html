@@ -19,98 +19,135 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" role="banner" aria-label="Encabezado principal">
         <div class="header__container">
             <!-- Logo -->
-            <div class="header__logo">
+            <div class="header__logo" aria-label="Logo de la empresa">
                 <span class="header__logo-image"></span>
             </div>
             <!-- Botón para abrir el menú móvil -->
-            <button class="header__mobile-toggle" aria-label="Abrir menú de navegación">
+            <button 
+                class="header__mobile-toggle" 
+                aria-label="Abrir menú de navegación" 
+                aria-expanded="false" 
+                aria-controls="menu-principal">
                 <span class="header__mobile-toggle-bar"></span>
             </button>
             <!-- Menú de navegación (desktop y móvil) -->
-            <nav class="header__nav js-menu" aria-label="Menú de navegación principal">
+            <nav class="header__nav js-menu" id="menu-principal" aria-label="Menú de navegación principal">
                 <ul class="header__menu">
                     <li class="header__menu-item">
-                        <a href="#hero" class="header__menu-link" aria-label="Ir a Inicio">Inicio</a>
+                        <a href="#hero" class="header__menu-link" aria-label="Ir a la sección de Inicio">Inicio</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#best" class="header__menu-link" aria-label="Ir a Nosotros">Nosotros</a>
+                        <a href="#best" class="header__menu-link" aria-label="Ir a la sección de Nosotros">Nosotros</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#offers" class="header__menu-link" aria-label="Ir a Viajes">Viajes</a>
+                        <a href="#offers" class="header__menu-link" aria-label="Ir a la sección de Viajes">Viajes</a>
                     </li>
                     <li class="header__menu-item">
-                        <a href="#contact" class="header__menu-link" aria-label="Ir a Contacto">Contacto</a>
+                        <a href="#contact" class="header__menu-link" aria-label="Ir a la sección de Contacto">Contacto</a>
                     </li>
                 </ul>
             </nav>
         </div>
     </header>
+    
     <main>
-        <section id="hero" class="section hero-section">
+        <section id="hero" class="section hero-section" aria-label="Sección principal: Explora el mundo">
             <div class="content hero-section__content">
                 <!-- Imagen principal del banner -->
                 <div class="hero-section__banner">
-                    <img src="./assets/images/banner_hero_section.jpg" alt="Manifest" class="hero-section__image"
-                        loading="lazy" />
+                    <img 
+                        src="./assets/images/banner_hero_section.jpg" 
+                        alt="Vista inspiradora de un destino de viaje" 
+                        class="hero-section__image" 
+                        loading="lazy" 
+                    />
                 </div>
                 <!-- Texto del banner -->
                 <div class="hero-section__caption">
                     <h1 class="hero-section__title section__title">Explora el mundo: Tu guía de viajes perfecta</h1>
-                    <span class="hero-section__separator section__separator"></span>
+                    <span class="hero-section__separator section__separator" aria-hidden="true"></span>
                     <p class="hero-section__text hero-section__text--featured">
                         Explora destinos increíbles y vive aventuras inolvidables.
                     </p>
                     <p class="hero-section__text">
-                        Ofrecemos una amplia gama de destinos, desde playas paradisíacas hasta montañas majestuosas,
+                        Ofrecemos una amplia gama de destinos, desde playas paradisíacas hasta montañas majestuosas, 
                         para que encuentres el lugar perfecto para tu próxima escapada.
                     </p>
-                    <a class="button button--lg bg--amethyst button--ir" href="#best">Descubre</a>
+                    <a 
+                        class="button button--lg bg--amethyst button--ir" 
+                        href="#best" 
+                        aria-label="Descubre más sobre nosotros en la sección Nosotros">
+                        Descubre
+                    </a>
                 </div>
             </div>
         </section>
-        <section id="best" class="section best-places">
+        
+        <section id="best" class="section best-places" aria-labelledby="best-title" aria-label="Sección: Los mejores destinos">
             <div class="content best-places__content">
-                <h2 class="best-places__title section__title">Los mejores destinos</h2>
+                <h2 id="best-title" class="best-places__title section__title">Los mejores destinos</h2>
                 <p class="best-places__description section__description">
-                    Explora los mejores destinos del mundo, desde las playas paradisíacas de Maldivas hasta las montañas
+                    Explora los mejores destinos del mundo, desde las playas paradisíacas de Maldivas hasta las montañas 
                     majestuosas de los Alpes. Cada lugar ofrece una experiencia única.
                 </p>
-                <div class="best-places__grid">
-                    <div class="best-places__item">
-                        <img class="best-places__image" src="./assets/images/best-places/best-places_1.jpg"
-                            alt="Playa al atardecer" />
+                <div class="best-places__grid" role="list">
+                    <div class="best-places__item" role="listitem">
+                        <img 
+                            class="best-places__image" 
+                            src="./assets/images/best-places/best-places_1.jpg" 
+                            alt="Playa al atardecer, con tonos dorados y el océano en calma." 
+                        />
                     </div>
-                    <div class="best-places__item">
-                        <img class="best-places__image" src="./assets/images/best-places/best-places_2.jpg"
-                            alt="Escaleras hacia la playa" />
+                    <div class="best-places__item" role="listitem">
+                        <img 
+                            class="best-places__image" 
+                            src="./assets/images/best-places/best-places_2.jpg" 
+                            alt="Escaleras de madera que llevan a una playa tranquila rodeada de naturaleza." 
+                        />
                     </div>
-                    <div class="best-places__item">
-                        <img class="best-places__image" src="./assets/images/best-places/best-places_3.jpg"
-                            alt="Estrella de mar bajo el agua" />
+                    <div class="best-places__item" role="listitem">
+                        <img 
+                            class="best-places__image" 
+                            src="./assets/images/best-places/best-places_3.jpg" 
+                            alt="Estrella de mar de color naranja bajo agua cristalina." 
+                        />
                     </div>
-                    <div class="best-places__item">
-                        <img class="best-places__image" src="./assets/images/best-places/best-places_4.jpg"
-                            alt="Acantilado en la costa" />
+                    <div class="best-places__item" role="listitem">
+                        <img 
+                            class="best-places__image" 
+                            src="./assets/images/best-places/best-places_4.jpg" 
+                            alt="Acantilado junto a un océano azul intenso, con cielo despejado." 
+                        />
                     </div>
-                    <div class="best-places__item">
-                        <img class="best-places__image" src="./assets/images/best-places/best-places_5.jpg"
-                            alt="Barco en aguas cristalinas" />
+                    <div class="best-places__item" role="listitem">
+                        <img 
+                            class="best-places__image" 
+                            src="./assets/images/best-places/best-places_5.jpg" 
+                            alt="Barco flotando en aguas cristalinas con fondo de arena blanca." 
+                        />
                     </div>
-                    <div class="best-places__item">
-                        <img class="best-places__image" src="./assets/images/best-places/best-places_6.jpg"
-                            alt="Piña en la arena junto al mar" />
+                    <div class="best-places__item" role="listitem">
+                        <img 
+                            class="best-places__image" 
+                            src="./assets/images/best-places/best-places_6.jpg" 
+                            alt="Piña fresca en la arena frente al mar, con olas suaves." 
+                        />
                     </div>
                 </div>
             </div>
         </section>
-        <section id="featured" class="section featured-places">
+        
+        <section id="featured" class="section featured-places" aria-label="Lugares destacados">
             <div class="content featured-places__content">
                 <div class="feature-places__item">
                     <div class="feature-places__image">
-                        <img src="./assets/images/featured/featured-place_cancun.jpg" alt="Cancún - México">
+                        <img 
+                            src="./assets/images/featured/featured-place_cancun.jpg" 
+                            alt="Cancún, México, con playas de arena blanca y aguas turquesas."
+                        />
                     </div>
                     <div class="featured-places__text">
                         <h3 class="featured-places__title">Cancún</h3>
@@ -118,25 +155,29 @@
                             Cancún es una ciudad vibrante famosa por sus playas y vida nocturna. Con aguas cristalinas y
                             arenas blancas, es un paraíso para los amantes del sol.
                         </p>
-                        <a href="#" class="button button--lg bg--amethyst button--il button--ir">Viajar</a>
+                        <a href="#" class="button button--lg bg--amethyst button--il button--ir" aria-label="Viajar a Cancún">Viajar</a>
                     </div>
                 </div>
                 <div class="feature-places__item">
                     <div class="feature-places__image">
-                        <img src="./assets/images/featured/featured-place_romana.jpg" alt="Cancún - México">
+                        <img 
+                            src="./assets/images/featured/featured-place_romana.jpg" 
+                            alt="Playa en La Romana, con palmeras y aguas cristalinas."
+                        />
                     </div>
                     <div class="featured-places__text">
-                        <h3 class="featured-places__title">La romana</h3>
+                        <h3 class="featured-places__title">La Romana</h3>
                         <p class="featured-places__description">
                             Imagina un impresionante destino de playa donde las arenas doradas se encuentran con aguas
                             cristalinas. Las suaves olas te invitan a relajarte bajo el cálido sol, mientras las
                             palmeras se mecen con la suave brisa.
                         </p>
-                        <a href="#" class="button button--lg bg--amethyst button--il button--ir">Ver más</a>
+                        <a href="#" class="button button--lg bg--amethyst button--il button--ir" aria-label="Ver más sobre La Romana">Ver más</a>
                     </div>
                 </div>
             </div>
         </section>
+        
         <section id="offers" class="section offers-places">
             <div class="content offers-places__content">
                 <h2 class="offers-places__title section__title">Lorem ipsum dolor sit</h2>
